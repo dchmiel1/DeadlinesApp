@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView nthToShow;
     private ImageView editImageView;
     private ImageView deleteImageView;
+    private ImageView calendarImageView;
     private BottomNavigationView navView;
     private boolean isDone;
     private View optionsView;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         navView = findViewById(R.id.navView);
         darkView = findViewById(R.id.darkView);
         optionsView = findViewById(R.id.optionsView);
+        calendarImageView = findViewById(R.id.calendarImageView);
 
         final Animation slideUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
 
@@ -117,6 +119,11 @@ public class MainActivity extends AppCompatActivity {
             Intent editIntent = new Intent(getApplicationContext(), AddingTaskActivity.class);
             editIntent.putExtra("id", ids[selected]);
             startActivity(editIntent);
+        });
+
+        calendarImageView.setOnClickListener(view -> {
+            Intent calendarIntent = new Intent(getApplicationContext(), CalendarActivity.class);
+            startActivity(calendarIntent);
         });
 
     }
