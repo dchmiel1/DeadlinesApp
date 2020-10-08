@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private View darkView;
     private int selected;
     private int[] ids;
-    private AlphaAnimation clickAnimation = new AlphaAnimation(1F, 0.5F);
+    public static final AlphaAnimation clickAnimation = new AlphaAnimation(1F, 0.5F);
 
     @Override
     public Resources.Theme getTheme() {

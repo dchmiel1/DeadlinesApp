@@ -52,6 +52,13 @@ public class DbHelper extends SQLiteOpenHelper {
                             " WHERE " + DbNames._ID + " = " + id, null);
     }
 
+    public Cursor getByDate(String date){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT " + DbNames.COLUMN_NAME_SUBJECT + ", " + DbNames.COLUMN_NAME_DATE + ", " + DbNames.COLUMN_NAME_DESCRIPTION +
+                            " FROM " + DbNames.TABLE_NAME +
+                            " WHERE " + DbNames.COLUMN_NAME_DATE + " LIKE '" + date + "%'", null);
+    }
+
     public void insertTask(String subject, String date, String description){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();

@@ -38,7 +38,7 @@
     </style>
 
     <style name="CaldroidDefaultDarkMonthName" parent="CaldroidDefaultMonthName">
-        <item name="android:textColor">@color/caldroid_white</item>
+        <item name="android:textColor">#CCCCCC</item>
     </style>
 
     <style name="CaldroidDefaultDarkGridView" parent="CaldroidDefaultGridView">
@@ -46,7 +46,7 @@
     </style>
 
     <style name="CaldroidDefaultDarkCell" parent="CaldroidDefaultCell">
-        <item name="android:textColor">@color/cell_text_color_dark</item>
+        <item name="android:textColor">#CCCCCC</item>
         <item name="android:background">@drawable/cell_bg_dark</item>
     </style>
 
