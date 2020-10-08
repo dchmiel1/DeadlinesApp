@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private View darkView;
     private int selected;
     private int[] ids;
+    private AlphaAnimation clickAnimation = new AlphaAnimation(1F, 0.5F);
 
     @Override
     public Resources.Theme getTheme() {
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         showList(false);
 
         add.setOnClickListener(view ->{
+            view.startAnimation(clickAnimation);
             Intent showAddingIntent = new Intent(getApplicationContext(), AddingTaskActivity.class);
             startActivity(showAddingIntent);
         });
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         deleteImageView.setOnClickListener(view ->{
+            view.startAnimation(clickAnimation);
             dbHelper.deleteById(ids[selected]);
             darkView.setVisibility(View.GONE);
             optionsView.setVisibility(View.GONE);
@@ -111,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         editImageView.setOnClickListener(view ->{
+            view.startAnimation(clickAnimation);
             listView.getChildAt(selected).setBackgroundColor(0);
             darkView.setVisibility(View.GONE);
             optionsView.setVisibility(View.GONE);
@@ -122,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         calendarImageView.setOnClickListener(view -> {
+            view.startAnimation(clickAnimation);
             Intent calendarIntent = new Intent(getApplicationContext(), CalendarActivity.class);
             startActivity(calendarIntent);
         });
