@@ -72,6 +72,7 @@
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:inputType="text"
+        android:singleLine="false"
         android:textColor="#a60c0c"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

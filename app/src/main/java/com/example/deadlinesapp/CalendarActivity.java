@@ -56,7 +56,7 @@ public class CalendarActivity extends AppCompatActivity {
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
         t.replace(R.id.cal_container, caldroidFragment);
         t.commit();
-        
+
         colourDates(true, redDark, caldroidFragment);
         colourDates(false, redLight, caldroidFragment);
 
